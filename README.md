@@ -44,13 +44,10 @@ In general, this can be done by:
 <a name="original"></a>
 ### The original *i*Fusion
 
-The methodology in my original paper focuses on making individualized **inference** (that is, parameter estimation, confidence interval/region, hypothesis testing, etc.) with statistical guarantee, the package significantly simplifies the methods and shifts the emphasis towards **prediction**. In this section, I will give a quick review of the original *i*Fusion method. But feel free to skip to the next section. 
-
-
 Inferences from different data sources can often be fused together, a process referred to as “fusion learning,” to yield more powerful findings than those from individual data sources alone. Effective fusion learning approaches are in growing demand as increasing number of data sources have become easily available in this big data era. *i*Fusion fits into the fusion learning framework, but has a focus on making efficient **individualized** inference. Specifically, *i*Fusion:	
 
 1. summarizes inferences from individual data sources as individual confidence distributions (CDs; roughly speaking, a CD is a distribution estimate for a parameter of interest with statistical gurantee, in contrast to a point estimate or a interval estimate; for those familiar with Bayesian statistics, you may think CD as a posterior distribution of a parameter but without any prior included).
-2. forms a clique of individuals that bear relevance to the target individual and then combines the CDs from those relevant individuals. How to combines the CDs is to the key of *i$Fusion. At high level, it first constructs a weight vector that measures the relevance of each individual subject to the target individual subject based on the individual CDs, and then apply a formula with this weight vector to obtain a combined CD. 
+2. forms a clique of individuals that bear relevance to the target individual and then combines the CDs from those relevant individuals. How to combines the CDs is to the key of *i*Fusion. At high level, it adaptively constructs a weight vector that measures the relevance of each individual subject to the target individual subject based on the individual CDs, and then apply a formula with this weight vector to obtain a combined CD. 
 3. draws inference for the target individual from the combined CD. 
 
 <div align="center">How <i>i</i>Fusion works versus classical meta analysis inference</div>
@@ -65,6 +62,17 @@ In essence, *i*Fusion strategically “borrows strength” from relevant individ
 
 <a name="simplified"></a>
 ### The simpilified *i*Fusion and the ``ifusion`` package
+
+The methodology in my original paper focuses on making individualized **inference** with statistical guarantee, that is, things like parameter estimation, confidence interval/region, hypothesis testing, and so on. Improved prediction is a byproduct of improved inference.
+
+Because the goal is inference in the original *i*Fusion, the combination of individual CDs relies on a sophiscated algorithm. In this package, however, I will simplify the method significantly by having the goal to make effcient predictions about the target individual subject - many of the practioners might be more interested in. 
+
+In particular, the simplified method:
+1. train a individual learner (in principal, any supervised learning model) for each individual subject data. 
+2. Use the individual learners to make prediction on the target individual data; for the target individual itself, rather than using the individual learner trained on its full data, use cross-validation framework to make an "out-of-sample" prediction for each of the target individual's own data. 
+3. Now, for each point in the target individual subject data, we will have *K* (the number of individual subjects) "out-of-sample" predictions for it. Use these predictions are feature variables to train a fusion learner. 
+4. For a new data point for the target individual subject with unknown response, first use the *K* individual learners to obtain *K* predictions, and then use the fusion learner to make a final prediction for it. 
+
 
 <a name="installation"></a>
 ## Installation

@@ -6,14 +6,18 @@ This package implements my 2019 JASA paper - [*i*Fusion: Individualized Fusion L
 ## Table of Contents
 
   * [Introduction](#Introduction)
-  * [Screenshot](#screenshot)
+  * [Methodology](#screenshot)
+  	* [The original *i*Fusion](#original)
+    * [The simplified *i*Fusion and the ``ifusion`` package](#simplified)  
   * [Installation](#installation)
-        * [OR using Pathogen:](#or-using-pathogen)
-        * [OR using Vundle:](#or-using-vundle)
-  * [License](#license)
+  * [Documentation](#documentation)  
+  * [References](#references)
+  	* [Main article](#main)
+    * [More references](#more)  
 
 
-## Introduction(#Introduction)
+<a name="introduction"></a>
+## Introduction
 
 *i*Fusion is a general statistical framework for making targeted inference and prediction. It is best suited in the scenario where:
 
@@ -34,8 +38,10 @@ In general, this can be done by:
 <div align="center"><img src="images/idea.png?raw=true" width="500"/></div>
 
 
+<a name="methodology"></a>
 ## Methodology
 
+<a name="original"></a>
 ### The original *i*Fusion
 
 The methodology in my original paper focuses on making individualized **inference** (that is, parameter estimation, confidence interval/region, hypothesis testing, etc.) with statistical guarantee, the package significantly simplifies the methods and shifts the emphasis towards **prediction**. In this section, I will give a quick review of the original *i*Fusion method. But feel free to skip to the next section. 
@@ -57,27 +63,28 @@ In essence, *i*Fusion strategically “borrows strength” from relevant individ
 <div align="center"><img src="images/pros.png?raw=true" width="600"/></div>
 
 
+<a name="simplified"></a>
 ### The simpilified *i*Fusion and the ``ifusion`` package
 
-
-
-
+<a name="installation"></a>
 ## Installation
 
 ```bash
 pip install ifusion
 ```
 
+<a name="documentation"></a>
 ## Documentation
 
 
-
+<a name="references"></a>
 ## References
 
-### Main articles
+<a name="main"></a>
+### Main article
 - [Full article]: **Jieli Shen**, Minge Xie, and Regina Liu. (2019). [*i*Fusion: Individualized Fusion Learning](https://amstat.tandfonline.com/doi/abs/10.1080/01621459.2019.1672557#.XciGbJJKg6U). *Journal of the American Statistical Association*, to appear.
 
-
+<a name="more"></a>
 ### More references
 - [My PhD thesis]: Jieli Shen. (2017). [Advances in confidence distribution: individualized fusion learning and predictive distribution function](https://rucore.libraries.rutgers.edu/rutgers-lib/55689/). PhD Thesis.
 - [Review article on confidence distribution]: Minge Xie, and Kesar Singh. (2013). [Confidence distribution, the frequentist distribution estimator of a parameter: A review](https://www.stat.rutgers.edu/home/mxie/RCPapers/insr.12000.pdf). *International Statistical Review*, **81**, 3–39.

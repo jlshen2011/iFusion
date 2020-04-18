@@ -1,10 +1,29 @@
 # *i*Fusion: Individualized Fusion Learning
 
+This package implements my 2019 JASA paper - *i*Fusion: Individualized Fusion Learning. 
+
+
 ## Introduction
 
-iFusion is a general statistical framework for making targeted inference and prediction.
+*i*Fusion is a general statistical framework for making targeted inference and prediction. It is best suited in the scenario where:
 
-This package implements my 2019 JASA paper - *i*Fusion: Individualized Fusion Learning. 
+* There is a number of **individual subject data**, which may or may not be generated from the same/similar data generating process. 
+* One would like to make inference and prediction about a **target individual subject**. 
+
+
+This can be achieved by:
+
+* Approach 1: Building a statistocal/machine learning model using the data associated with the target individual only (no/small bias, large variance);
+* Approach 2: Or pooling the data for all individual subjects and building a single model without recognizing the potential heterogenities across different individuals (large bias, small variance).
+
+
+*i*Fusion borrows information from others individual subjects (**fusion**), but in a smart way that only from individual subjects that are relevant to the target (**individualized**) , this optimizing the balance between bias and variance. 
+
+
+<div align="center"><i>i</i>Fusion viewed from a bias-variance trade-off perspective</div>
+
+<div align="center"><img src="images/idea.png?raw=true" width="600"/></div>
+
 
 
 ## Methodology
@@ -28,9 +47,7 @@ In essence, iFusion strategically “borrows strength” from relevant individua
 
 ### Figures
 
-<div align="center"><i>i</i>Fusion viewed from a bias-variance trade-off perspective</div>
 
-<img src="images/idea.png?raw=true" width="600"/>
 
 <div align="center">Why <i>i</i>Fusion</div>
 

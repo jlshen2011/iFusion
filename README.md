@@ -34,8 +34,8 @@ In general, this can be done by:
 
 
 <div align="center"><i>i</i>Fusion viewed from a bias-variance trade-off perspective</div>
-
 <div align="center"><img src="images/idea.png?raw=true" width="500"/></div>
+<br></br>
 
 
 <a name="methodology"></a>
@@ -52,13 +52,14 @@ Inferences from different data sources can often be fused together, a process re
 
 <div align="center">How <i>i</i>Fusion works versus classical meta analysis inference</div>
 <div align="center"><img src="images/flow.png?raw=true" width="600"/></div>
+<br></br>
 
 
 In essence, *i*Fusion strategically “borrows strength” from relevant individuals to enhance the efficiency of the target individual inference while preserving its validity. The research focuses on the setting where each individual study has a number of observations but its inference can be further improved by incorporating additional information from similar individual subjects. Under the setting, iFusion is shown to achieve oracle property under suitable conditions. The following figure highlights some nice features about *i*Fusion. 
 
 <div align="center">Why <i>i</i>Fusion?</div>
 <div align="center"><img src="images/pros.png?raw=true" width="600"/></div>
-
+<br></br>
 
 <a name="simplified"></a>
 ### The simpilified *i*Fusion and the ``ifusion`` package

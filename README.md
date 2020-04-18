@@ -27,8 +27,8 @@ This package implements my 2019 JASA paper - [*i*Fusion: Individualized Fusion L
 
 In general, this can be done by:
 
-* **Approach 1**: Building a statistocal/machine learning model using the data associated with the target individual only (no/small bias, large variance);
-* **Approach 2**: Pooling the data for all individual subjects and building a single model without recognizing the potential heterogenities across different individuals (large bias, small variance).
+* **Approach 1**: Building a statistical/machine learning model using the data associated with the target individual only (no/small bias, large variance);
+* **Approach 2**: Pooling the data for all individual subjects and building a single model without recognizing the potential heterogeneities across different individuals (large bias, small variance).
 
 *i*Fusion borrows information from others individual subjects (**fusion**), but in a smart way that only from individual subjects that are relevant to the target (**individualized**) , this optimizing the balance between bias and variance. 
 
@@ -46,27 +46,27 @@ In general, this can be done by:
 
 Inferences from different data sources can often be fused together, a process referred to as “fusion learning,” to yield more powerful findings than those from individual data sources alone. Effective fusion learning approaches are in growing demand as increasing number of data sources have become easily available in this big data era. *i*Fusion fits into the fusion learning framework, but has a focus on making efficient **individualized** inference. Specifically, *i*Fusion:	
 
-1. summarizes inferences from individual data sources as individual confidence distributions (CDs; roughly speaking, a CD is a distribution estimate for a parameter of interest with statistical gurantee, in contrast to a point estimate or a interval estimate; for those familiar with Bayesian statistics, you may think CD as a posterior distribution of a parameter but without any prior included).
+1. summarizes inferences from individual data sources as individual confidence distributions (CDs; roughly speaking, a CD is a distribution estimate for a parameter of interest with statistical guarantee, in contrast to a point estimate or a interval estimate; for those familiar with Bayesian statistics, you may think CD as a posterior distribution of a parameter but without any prior included).
 2. forms a clique of individuals that bear relevance to the target individual and then combines the CDs from those relevant individuals. How to combines the CDs is to the key of *i*Fusion. At high level, it adaptively constructs a weight vector that measures the relevance of each individual subject to the target individual subject based on the individual CDs, and then apply a formula with this weight vector to obtain a combined CD. 
 3. draws inference for the target individual from the combined CD. 
 
-<div align="center">How <i>i</i>Fusion works versus classical meta analysis inference</div>
+<div align="center">How <i>i</i>Fusion works versus classical meta-analysis inference</div>
 <div align="center"><img src="images/flow.png?raw=true" width="600"/></div>
 <br></br>
 
 
-In essence, *i*Fusion strategically “borrows strength” from relevant individuals to enhance the efficiency of the target individual inference while preserving its validity. The research focuses on the setting where each individual study has a number of observations but its inference can be further improved by incorporating additional information from similar individual subjects. Under the setting, iFusion is shown to achieve oracle property under suitable conditions. The following figure highlights some nice features about *i*Fusion. 
+In essence, *i*Fusion strategically “borrows strength” from relevant individuals to enhance the efficiency of the target individual inference while preserving its validity. The research focuses on the setting where each individual study has a number of observations but its inference can be further improved by incorporating additional information from similar individual subjects. Under the setting, *i*Fusion is shown to achieve oracle property under suitable conditions. The following figure highlights some nice features about *i*Fusion. 
 
 <div align="center">Why <i>i</i>Fusion?</div>
 <div align="center"><img src="images/pros.png?raw=true" width="600"/></div>
 <br></br>
 
 <a name="simplified"></a>
-### The simpilified *i*Fusion and the ``ifusion`` package
+### The simplified *i*Fusion and the ``ifusion`` package
 
 The methodology in my original paper focuses on making individualized **inference** with statistical guarantee, that is, things like parameter estimation, confidence interval/region, hypothesis testing, and so on. Improved prediction is a byproduct of improved inference.
 
-Because the goal is inference in the original *i*Fusion, the combination of individual CDs relies on a sophiscated algorithm. In this package, however, I will simplify the method significantly by having the goal to make effcient predictions about the target individual subject - many of the practioners might be more interested in. 
+Because the goal is inference in the original *i*Fusion, the combination of individual CDs relies on a sophisticated algorithm. In this package, however, I will simplify the method significantly by having the goal to make efficient predictions about the target individual subject - many of the practitioners might be more interested in. 
 
 In particular, the simplified method:
 1. train a individual learner (in principal, any supervised learning model) for each individual subject data. 

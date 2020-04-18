@@ -13,11 +13,10 @@ This package implements my 2019 JASA paper - [*i*Fusion: Individualized Fusion L
 
 In general, this can be done by:
 
-* Approach 1: Building a statistocal/machine learning model using the data associated with the target individual only (no/small bias, large variance);
-* Approach 2: Or pooling the data for all individual subjects and building a single model without recognizing the potential heterogenities across different individuals (large bias, small variance).
+* **Approach 1**: Building a statistocal/machine learning model using the data associated with the target individual only (no/small bias, large variance);
+* **Approach 2**: Pooling the data for all individual subjects and building a single model without recognizing the potential heterogenities across different individuals (large bias, small variance).
 
-
-*i*Fusion borrows information from others individual subjects (**fusion**), but in a smart way that only from individual subjects that are relevant to the target (**individualized**) , this optimizing the balance between bias and variance. 
+* **Approach 3:** *i*Fusion borrows information from others individual subjects (**fusion**), but in a smart way that only from individual subjects that are relevant to the target (**individualized**) , this optimizing the balance between bias and variance. 
 
 
 <div align="center"><i>i</i>Fusion viewed from a bias-variance trade-off perspective</div>

@@ -3,7 +3,18 @@
 This package implements my 2019 JASA paper - [*i*Fusion: Individualized Fusion Learning](https://amstat.tandfonline.com/doi/abs/10.1080/01621459.2019.1672557#.XciGbJJKg6U). 
 
 
-## Introduction
+# Table of Contents
+=================
+
+  * [Introduction](## Introduction)
+  * [Screenshot](#screenshot)
+  * [Installation](#installation)
+        * [OR using Pathogen:](#or-using-pathogen)
+        * [OR using Vundle:](#or-using-vundle)
+  * [License](#license)
+
+
+## Introduction(#Introduction)
 
 *i*Fusion is a general statistical framework for making targeted inference and prediction. It is best suited in the scenario where:
 
@@ -45,7 +56,6 @@ In essence, *i*Fusion strategically “borrows strength” from relevant individ
 
 <div align="center">Why <i>i</i>Fusion?</div>
 <div align="center"><img src="images/pros.png?raw=true" width="600"/></div>
-
 
 
 ### The simpilified *i*Fusion and the ``ifusion`` package

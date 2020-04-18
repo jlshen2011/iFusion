@@ -10,7 +10,19 @@ This package implements my 2019 JASA paper - *i*Fusion: Individualized Fusion Le
 ## Methodology
 
 
+## Installation
+
+``
+pip install ifusion
+``
+
+## Documentation
+
+
 
 ## References
 
+### Main Articles
 * Jieli Shen, Minge Xie, and Regina Y. Liu. (2019). iFusion: Individualized Fusion Learning. Journal of the American Statistical Association, to appear.
+
+### More References

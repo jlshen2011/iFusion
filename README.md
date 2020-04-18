@@ -3,10 +3,9 @@
 This package implements my 2019 JASA paper - [*i*Fusion: Individualized Fusion Learning](https://amstat.tandfonline.com/doi/abs/10.1080/01621459.2019.1672557#.XciGbJJKg6U). 
 
 
-# Table of Contents
-=================
+## Table of Contents
 
-  * [Introduction](## Introduction)
+  * [Introduction](#Introduction)
   * [Screenshot](#screenshot)
   * [Installation](#installation)
         * [OR using Pathogen:](#or-using-pathogen)

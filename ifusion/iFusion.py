@@ -35,13 +35,15 @@ class iFusion:
 
 
     def _predict_using_indiv_models(self):
-        mask = id == self.target
-        X_target, y_target = X[mask], y[mask]
+        mask = self.id == self.target
+        print(mask)
+        X_target, y_target = self.X[mask], self.y[mask]
         indiv_preds = []
         for k in range(self.indiv_num):
             if k == self.target:
                 tmp = y_target.copy()
                 kf = KFold(n_splits=self.cv_num)
+                print(y_target)
                 kf_split = kf.split(X_target, y_target)
                 for train_index, test_index in kf_split:
                     indiv_learner = deepcopy(self.indiv_learner)
